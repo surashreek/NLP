@@ -1,0 +1,146 @@
+Word Sense Disambiguation- Homework 4
+(Surashree Kulkarni- ssk2197)
+
+PART A
+
+For Part A, we performed word sense disambiguation- the process of determining the ‘sense’ of a polysemous word in a given context- using two classification methods: KNN and SVM. Since we have labeled training data, we are essentially performing supervised WSD. 
+
+We are building context vectors for each instance of a lexelt, in that, we are simply adding words in the context of the lexelt in a given window size. These words are treated as a ‘bag of words’, and the context is defined as a set of words along with their frequencies. This is a simple approach to WSD, and hence not exactly the best.
+
+K Nearest Neighbors
+
+In the K Nearest Neighbors classifier, we use a default parameter k (= number of nearest neighbors) set to 5 and a euclidean distance = 2. KNN classifies unlabeled examples based on their similarity with examples in a training set, i.e., for an ambiguous lexelt, 5 of its closest (most similar) neighbors at a euclidean distance of 2 are consulted and the results are averaged. The training examples are mapped into a multidimensional feature space. The space is partitioned into regions by class labels of the training samples. A point in the space is assigned to the class c, if it is the most frequent class label among the k nearest training samples. The performance of the KNN algorithm is influenced by two main factors: (1) the similarity measure used to locate the k nearest neighbors; and (2) the number of  k neighbors used to classify the new sample. [1] [2]
+
+Since this was a simple approach with default settings, KNN did not do so well. 
+The precision values achieved for Part A KNN were:
+
+Fine-grained score for "KNN-English.answer" using key "data/English-dev.key":
+ precision: 0.560 (1111.00 correct of 1985.00 attempted)
+ recall: 0.560 (1111.00 correct of 1985.00 in total)
+ attempted: 100.00 % (1985.00 attempted of 1985.00 in total)
+Time: 76.9328 seconds
+
+Fine-grained score for "KNN-Spanish.answer" using key "data/Spanish-dev.key":
+ precision: 0.714 (1412.00 correct of 1977.00 attempted)
+ recall: 0.670 (1412.00 correct of 2107.00 in total)
+ attempted: 93.83 % (1977.00 attempted of 2107.00 in total)
+Time: 66.0265 seconds
+
+Fine-grained score for "KNN-Catalan.answer" using key "data/Catalan-dev.key":
+ precision: 0.720 (816.00 correct of 1133.00 attempted)
+ recall: 0.720 (816.00 correct of 1133.00 in total)
+ attempted: 100.00 % (1133.00 attempted of 1133.00 in total)
+Time: 49.5245 seconds
+
+Support Vector Machine
+
+The SVM performs optimization to find a hyperplane with the largest margin that separates training examples into two classes. A test example is classified depending on the side of the hyperplane it lies in. Input features can be mapped into high dimensional space before performing the optimization and classification. A kernel function can be used to reduce the computational cost of training and testing in high dimensional space. [3]
+
+The precision values achieved for Part A SVM were:
+
+Fine-grained score for "SVM-English.answer" using key "data/English-dev.key":
+ precision: 0.637 (1265.00 correct of 1985.00 attempted)
+ recall: 0.637 (1265.00 correct of 1985.00 in total)
+ attempted: 100.00 % (1985.00 attempted of 1985.00 in total)
+Time: 118.644 seconds
+
+Fine-grained score for "SVM-Spanish.answer" using key "data/Spanish-dev.key":
+ precision: 0.796 (1573.00 correct of 1977.00 attempted)
+ recall: 0.747 (1573.00 correct of 2107.00 in total)
+ attempted: 93.83 % (1977.00 attempted of 2107.00 in total)
+Time: 82.0891 seconds
+
+Fine-grained score for "SVM-Catalan.answer" using key "data/Catalan-dev.key":
+ precision: 0.835 (946.00 correct of 1133.00 attempted)
+ recall: 0.835 (946.00 correct of 1133.00 in total)
+ attempted: 100.00 % (1133.00 attempted of 1133.00 in total)
+Time: 56.1937 seconds
+
+NOTES
+
+The issue with KNN is that some lexelts will have instances much greater than 5, while some might not have even 5. Reducing the number of neighbors greatly increases variance, hence one probably has to do a lot of testing with various values of k to get high precision. KNN did not perform as well as SVM, and after reading up some more on KNN classifiers in WSD, I found that KNN is regarded as one of the best classifiers for WSD, BUT one needs to introduce weighted features and similarity metrics to achieve better accuracy. This makes sense because with weighted features, the “contribution” of each neighbor will be proportional to its relevance, and hence the selection of k best neighbors will be better. 
+
+Also to be noted, the performance of KNN is severely degraded by the presence of noisy or irrelevant features: since the window_size was set to 10 in our bag of words model, this might have contributed to some noise- when I reduced the window_size to 9, I noticed an improvement in precision by 0.1, so there is some relevance to the fact that the size of the window might have been too large for KNN.
+ 
+SVM with default settings (penalty parameter C = 1.0, degree 3, etc.) performed much better than KNN by an average of 0.09 in precision for all 3 languages. SVM as a rule works well with a. linearly separable datasets, b. a small feature set. These two factors were both present in our training data for part A. This could have contributed in its better performance. I also ran Part A with only SVM and only KNN and found that KNN finishes much faster than SVM. This shows that SVM takes a longer training time, but produces much higher accuracy.
+
+PART B
+
+For Part B, instead of using the ‘bag of words’ feature model, we add more features to make classification more robust. The features tried were:
+
+a. Add collocational features: This was an extremely important feature addition that resulted in a precision of 0.640. Collocational features such as surrounding words + part of speech tags are very important for classification, because, without these, the senses of ‘check’ in say, ‘check with him…’ and ‘check out of…’ might be predicted as similar. Also important to note is the addition of the head word (ambiguous lexelt) itself + its part of speech provided an excellent improvement in precision results (almost up by 0.18 points).
+
+b. Remove stop words, punctuation: Removing stop words did not help at all, in fact, it decreased the precision. This might make sense as in the above example ([check with him] and [check out of]), removing stop words would leave us with [check] in both cases, making classification difficult. However, removing punctuation brought a marginal improvement in the results. 
+
+c. Find out the most relevant words in the context of an instance: This method was implemented and rejected for two reasons:
+i. The computation time went up by almost 4 times. 
+ii. It decreased the precision, weirdly enough- This might probably be because of improper implementation, however, I decided not to probe it further because of i. Ideally, instead of adding the entire left and right context in a window of 10, adding relevant words would improve classification, however, it didn’t. 
+
+d. Add synonyms, hyponyms, hypernyms: The latter (hypo and hypernyms) were not used because they did not give any improvement in the results. Adding synonyms brought about a marginal improvement (0.01) and hence was retained.
+
+e. Good feature selection method: I used scikit’s SelectKBest with chi2 with k=10. I used several values of k (10, 20, 30, 50) to try to improve precision, and found that lower values of k performed better. However, no value resulted in better results than the ones obtained with returning ALL the features. Hence, this method was rejected too. 
+
+Classifier used: SVM (Tried using KNN, but precision dropped drastically).
+
+Final features used: collocational features, remove punctuations, add synonyms. 
+
+Precision values obtained:
+Fine-grained score for "Best-English.answer" using key "data/English-dev.key":
+ precision: 0.673 (1336.00 correct of 1985.00 attempted)
+ recall: 0.673 (1336.00 correct of 1985.00 in total)
+ attempted: 100.00 % (1985.00 attempted of 1985.00 in total)
+Time: 155.465 seconds
+
+Fine-grained score for "Best-Spanish.answer" using key "data/Spanish-dev.key":
+ precision: 0.823 (1628.00 correct of 1977.00 attempted)
+ recall: 0.773 (1628.00 correct of 2107.00 in total)
+ attempted: 93.83 % (1977.00 attempted of 2107.00 in total)
+Time: 168.967 seconds
+
+Fine-grained score for "Best-Catalan.answer" using key "data/Catalan-dev.key":
+ precision: 0.845 (957.00 correct of 1133.00 attempted)
+ recall: 0.845 (957.00 correct of 1133.00 in total)
+ attempted: 100.00 % (1133.00 attempted of 1133.00 in total)
+Time: 113.8912 seconds
+
+Interesting observations:
+
+i. For Part A, I struggled to get a precision above the required precision, however, the moment I added the head and its part of speech to the context, the precision went up by 0.2. 
+ii. Vary window size: I changed it to 5, 10, 15, 20. The best results were obtained for window_size = 15.
+iii. Vary collocation window size (the number of words taken from the words surrounding the head): Instead of taking 3 words from left and right, I took 2, and found that the precision improved by almost 0.08. 
+iv. For Spanish, the scorer program was unable to find some words in both parts, and gave a recall of ~93%.
+
+For Part B, I tried adding the following features:
+i. Add the first noun and verb before and after the head: Rejected because no improvement shown + increased computation time by a substantial amount.
+ii. Add first preposition before and after head: Rejected because no improvement
+iii. Add Named Entity before & after: No improvement
+iv. Add bigrams from the left and right context: Rejected because this resulted in a drop in precision by 0.1. 
+
+Why some languages are easier to disambiguate
+Since we use the same algorithm over the three languages and get varying precision results, we can make the following assumption:
+
+Ease of disambiguation: Catalan > Spanish > English
+
+Consider the following table which shows the number of lemmas, synsets, and word senses in the six languages currently covered by BabelNet:
+Language Lemmas		Synsets		Word senses
+English	 5938324	3032406		6550579
+Catalan	3518079		2214781		3777700
+Spanish	3623734		2252632		3941039 
+[5]
+
+It’s clear that the English language in general is more complex than the other two. By complex, I mean that the average number of senses per word is higher for English [9.6 per word] than that for Spanish [4.2 per word] or Catalan [5.37 per word]. This could be a major reason for the ease of disambiguation in some languages over others.
+
+However, the average number of senses per word may not be the only factor. Comprehensiveness of corpus and the quality of knowledge sources like thesaurus also affect the performance of the algorithms. I checked the word count of each of the training files and found them to be comparable (~110k), however, as stated in the previous paragraph, since the variability in word senses in the dataset for Spanish/Catalan is lower, there is a possibility that this resulted into higher accuracy. If the English dataset had had more instance examples per sense per lexelt, the precision might have been higher. [6]
+
+The overall program runs with an average time of ~180 seconds.
+
+Note: I have left most of the unused features as comments.
+
+References:
+1. Direct Word Sense Matching for Lexical Substitution, Efrat Hershkovitz-Marmorshtein
+2. https://en.wikipedia.org/wiki/Nearest_neighbour_classifiers
+3. http://www.aclweb.org/anthology/W04-0834
+4. https://aclweb.org/anthology/C/C02/C02-1039.pdf
+5. https://books.google.com/books?id=Td1EAAAAQBAJ&pg=PA187&lpg=PA187&dq=catalan+word+senses&source=bl&ots=Alo-pfjGLh&sig=nDzGeOY6HQCWkIruQatuHyDt_i0&hl=en&sa=X&ved=0ahUKEwjH-Jq59aTJAhUDSyYKHU2UAWEQ6AEIPDAG#v=onepage&q=catalan%20word%20senses&f=false
+6. https://books.google.com/books?id=d6Zzl6ZuXhQC&pg=PA322&lpg=PA322&dq=average+number+of+senses+per+word+english&source=bl&ots=ZX6ECF3Lwt&sig=pwZVWdl3mF_ImT1ep57k5mldDeU&hl=en&sa=X&ved=0ahUKEwidlonD-KTJAhUDdh4KHWaJAZQQ6AEIHDAA#v=onepage&q=average%20number%20of%20senses%20per%20word%20english&f=false
+
