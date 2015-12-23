@@ -1,4 +1,4 @@
-Fall 2015 COMS W4705, Columbia University with Prof. Dragomir Radev
+Fall 2015 COMS W4705, Natural Language Processing with Prof. Dragomir Radev
 
 Homework 1: Language Modeling and Part of Speech Tagging<br />
 Homework 2: Multilingual Dependency Parsing <br />
