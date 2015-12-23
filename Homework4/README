@@ -1,0 +1,80 @@
+Homework 4- Machine Translation
+(Surashree Kulkarni, ssk2197)
+
+Part A
+
+i. 
+Average AER for the first 50 sentences for IBM1 model = 0.665.
+Average AER for the first 50 sentences for IBM2 model = 0.650.
+
+For the following sentence pair, IBM1 does better than IBM2:
+
+[u'Wie', u'Sie', u'sicher', u'aus', u'der', u'Presse', u'und', u'dem', u'Fernsehen', u'wissen', u',', u'gab', u'es', u'in', u'Sri', u'Lanka', u'mehrere', u'Bombenexplosionen', u'mit', u'zahlreichen', u'Toten', u'.']
+[u'You', u'will', u'be', u'aware', u'from', u'the', u'press', u'and', u'television', u'that', u'there', u'have', u'been', u'a', u'number', u'of', u'bomb', u'explosions', u'and', u'killings', u'in', u'Sri', u'Lanka', u'.']
+
+Gold alignment, AER = 0.0
+0-0 1-0 2-1 2-2 3-4 4-5 5-6 6-7 7-8 8-8 9-3 10-9 11-10 11-11 11-12 12-10 13-20 14-21 15-22 16-14 16-15 17-16 17-17 17-18 17-19 19-13 21-23
+
+IBMModel1 alignment, AER = 0.791666666667
+0-19 1-0 2-19 3-4 4-15 5-19 6-18 7-22 8-19 9-19 10-2 11-22 12-22 13-20 14-22 15-22 16-19 17-19 18-19 19-19 20-19
+
+IBMModel2 alignment, AER = 0.833333333333
+0-6 1-0 2-16 3-4 4-4 5-17 6-18 7-22 8-19 9-8 10-2 11-21 12-22 13-20 14-19 15-22 16-19 17-8 18-17 19-19 20-8
+
+Notes:
+Here, both models perform terribly, however, ibm1 performs a little better than ibm2. This maybe because out of the 21 words in the source sentence, only 3 form a one-to-many relationship with the target sentence, which means that most words have a one-to-one relationship with a (comparatively) little alignment distortion. Since ibm1 assumes this in its model, it might perform better here.
+
+For the following sentence pair, IBM2 does better than IBM1:
+
+[u'Ja', u',', u'Herr', u'Evans', u',', u'ich', u'denke', u',', u'da\xdf', u'eine', u'derartige', u'Initiative', u'durchaus', u'angebracht', u'ist', u'.']
+[u'Yes', u',', u'Mr', u'Evans', u',', u'I', u'feel', u'an', u'initiative', u'of', u'the', u'type', u'you', u'have', u'just', u'suggested', u'would', u'be', u'entirely', u'appropriate', u'.']
+
+Gold alignment, AER = 0.0
+0-0 1-1 2-2 3-3 4-4 5-5 6-6 8-6 9-7 10-10 10-11 11-8 12-15 12-18 13-16 13-17 13-19 14-16 15-20
+
+IBMModel1 alignment, AER = 0.588235294118
+0-19 1-4 2-2 3-3 4-4 5-5 6-19 7-4 8-6 9-7 10-19 11-19 12-19 13-19 14-8
+
+IBMModel2 alignment, AER = 0.470588235294
+0-18 1-4 2-2 3-3 4-4 5-5 6-18 7-4 8-6 9-7 10-11 11-8 12-8 13-19 14-8
+
+Notes:
+IBM2 performs pretty well here with a 47% error rate. One reason is obviously because ibm2 takes into consideration alignment probabilities (unlike ibm1); this sentence, as one can see from the gold alignment has high distortion in the second half. 
+
+ii.
+Convergence in AER reached at: 
+
+IBMModel 1, # of iterations: 6; Avg AER = 0.626
+IBMModel 2, # of iterations: 4; Avg AER = 0.642
+
+Note:
+I tried several values for number of iterations, both > and < 10. Since at every iteration we calculate expected counts and then use these to reestimate t and q parameters, there has to be an optimal # of iterations at which to stop for the best t and q values (convergence). Even so, this value at # of iterations = 6 (or 4) must be a local minima. There will be a lower AER achieved for higher # of iterations. Of course, this also depends on the initial values of t and q. 
+
+The formula argmax(t*q) that we calculate ultimately to compute alignments is not convex, meaning it has multiple "local" optima. However, in brief, there are many results showing that convex functions are “easy” to optimize (i.e., we can design efficient algorithms that find the argmax), whereas non-convex functions are generally much harder to deal with (i.e., we can often show that finding the arg max is computationally hard, for example it is often NP-hard). In many cases, the best we can hope for is that the optimization method finds a local optimum of a non-convex function. [1]
+
+References:
+Statistical machine translation, IBM Models 1 and 2, Michael Collins
+
+Part B
+
+For the following sentence pair, Berkeley aligner performs better than the IBM models:
+[u'Ich', u'bitte', u'Sie', u',', u'sich', u'zu', u'einer', u'Schweigeminute', u'zu', u'erheben', u'.']
+[u'Please', u'rise', u',', u'then', u',', u'for', u'this', u'minute', u"'", u's', u'silence', u'.']
+
+Gold alignment, AER = 0.0
+0-0 1-0 2-0 3-4 4-1 5-5 6-6 7-7 7-8 7-9 7-10 8-10 9-10 10-11
+
+IBMModel1 alignment, AER 0.74
+0-1 1-1 2-1 3-4 4-10 5-10 6-10 7-10 8-10 9-1
+
+IBMModel2 alignment, AER 0.666666666667
+0-0 1-1 2-0 3-2 4-10 5-10 6-10 7-7 8-10 9-0
+
+BerkeleyAligner, AER = 0.6
+0-0 1-1 2-0 3-2 4-7 5-10 6-10 7-7 8-10 9-1 10-11
+
+Notes:
+Berkeley aligner works better than both models because it takes both forward and backward alignment into consideration which probably helps in making more alignment predictions (one extra alignment prediction here by berkeley).
+
+NOTE
+EC.py has been commented out because it's not implemented and was causing the code to throw and indentation error.

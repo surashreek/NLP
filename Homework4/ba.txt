@@ -1,0 +1,100 @@
+[u'Wiederaufnahme', u'der', u'Sitzungsperiode']
+[u'Resumption', u'of', u'the', u'session']
+0-0 1-2 2-3
+
+
+[u'Ich', u'erkl\xe4re', u'die', u'am', u'Freitag', u',', u'dem', u'17.', u'Dezember', u'unterbrochene', u'Sitzungsperiode', u'des', u'Europ\xe4ischen', u'Parlaments', u'f\xfcr', u'wiederaufgenommen', u',', u'w\xfcnsche', u'Ihnen', u'nochmals', u'alles', u'Gute', u'zum', u'Jahreswechsel', u'und', u'hoffe', u',', u'da\xdf', u'Sie', u'sch\xf6ne', u'Ferien', u'hatten', u'.']
+[u'I', u'declare', u'resumed', u'the', u'session', u'of', u'the', u'European', u'Parliament', u'adjourned', u'on', u'Friday', u'17', u'December', u'1999', u',', u'and', u'I', u'would', u'like', u'once', u'again', u'to', u'wish', u'you', u'a', u'happy', u'new', u'year', u'in', u'the', u'hope', u'that', u'you', u'enjoyed', u'a', u'pleasant', u'festive', u'period', u'.']
+0-17 1-37 2-30 3-21 4-37 5-15 6-23 7-37 8-37 9-37 10-4 11-30 12-7 13-8 14-27 15-37 16-15 17-37 18-33 19-20 20-35 21-37 22-19 23-37 24-16 25-31 26-15 27-32 28-33 29-37 30-37 31-29 32-39
+
+
+[u'Wie', u'Sie', u'feststellen', u'konnten', u',', u'ist', u'der', u'gef\xfcrchtete', u'"', u'Millenium-Bug', u'"', u'nicht', u'eingetreten', u'.', u'Doch', u'sind', u'B\xfcrger', u'einiger', u'unserer', u'Mitgliedstaaten', u'Opfer', u'von', u'schrecklichen', u'Naturkatastrophen', u'geworden', u'.']
+[u'Although', u',', u'as', u'you', u'will', u'have', u'seen', u',', u'the', u'dreaded', u"'", u'millennium', u'bug', u"'", u'failed', u'to', u'materialise', u',', u'still', u'the', u'people', u'in', u'a', u'number', u'of', u'countries', u'suffered', u'a', u'series', u'of', u'natural', u'disasters', u'that', u'truly', u'were', u'dreadful', u'.']
+0-18 1-3 2-35 3-34 4-17 5-2 6-29 7-35 8-21 9-35 10-21 11-34 12-35 13-36 14-4 15-15 16-27 17-20 18-35 19-35 20-35 21-13 22-35 23-35 24-13 25-36
+
+
+[u'Im', u'Parlament', u'besteht', u'der', u'Wunsch', u'nach', u'einer', u'Aussprache', u'im', u'Verlauf', u'dieser', u'Sitzungsperiode', u'in', u'den', u'n\xe4chsten', u'Tagen', u'.']
+[u'You', u'have', u'requested', u'a', u'debate', u'on', u'this', u'subject', u'in', u'the', u'course', u'of', u'the', u'next', u'few', u'days', u',', u'during', u'this', u'part-session', u'.']
+0-7 1-19 2-2 3-11 4-15 5-13 6-0 7-4 8-17 9-15 10-2 11-7 12-8 13-9 14-13 15-7 16-20
+
+
+[u'Ich', u'bitte', u'Sie', u',', u'sich', u'zu', u'einer', u'Schweigeminute', u'zu', u'erheben', u'.']
+[u'Please', u'rise', u',', u'then', u',', u'for', u'this', u'minute', u"'", u's', u'silence', u'.']
+0-0 1-1 2-0 3-2 4-10 5-10 6-10 7-7 8-10 9-0 10-11
+
+
+[u'(', u'Das', u'Parlament', u'erhebt', u'sich', u'zu', u'einer', u'Schweigeminute', u'.', u')']
+[u'(', u'The', u'House', u'rose', u'and', u'observed', u'a', u'minute', u"'", u's', u'silence', u')']
+0-0 1-5 2-3 3-5 4-10 5-10 6-10 7-7 9-11
+
+
+[u'Frau', u'Pr\xe4sidentin', u',', u'zur', u'Gesch\xe4ftsordnung', u'.']
+[u'Madam', u'President', u',', u'on', u'a', u'point', u'of', u'order', u'.']
+0-0 1-1 2-2 3-5 4-7 5-8
+
+
+[u'Wie', u'Sie', u'sicher', u'aus', u'der', u'Presse', u'und', u'dem', u'Fernsehen', u'wissen', u',', u'gab', u'es', u'in', u'Sri', u'Lanka', u'mehrere', u'Bombenexplosionen', u'mit', u'zahlreichen', u'Toten', u'.']
+[u'You', u'will', u'be', u'aware', u'from', u'the', u'press', u'and', u'television', u'that', u'there', u'have', u'been', u'a', u'number', u'of', u'bomb', u'explosions', u'and', u'killings', u'in', u'Sri', u'Lanka', u'.']
+0-6 1-0 2-16 3-4 4-4 5-17 6-18 7-22 8-19 9-8 10-2 11-21 12-22 13-20 14-21 15-22 16-19 17-8 18-17 19-19 20-16 21-23
+
+
+[u'Zu', u'den', u'Attentatsopfern', u',', u'die', u'es', u'in', u'j\xfcngster', u'Zeit', u'in', u'Sri', u'Lanka', u'zu', u'beklagen', u'gab', u',', u'z\xe4hlt', u'auch', u'Herr', u'Kumar', u'Ponnambalam', u',', u'der', u'dem', u'Europ\xe4ischen', u'Parlament', u'erst', u'vor', u'wenigen', u'Monaten', u'einen', u'Besuch', u'abgestattet', u'hatte', u'.']
+[u'One', u'of', u'the', u'people', u'assassinated', u'very', u'recently', u'in', u'Sri', u'Lanka', u'was', u'Mr', u'Kumar', u'Ponnambalam', u',', u'who', u'had', u'visited', u'the', u'European', u'Parliament', u'just', u'a', u'few', u'months', u'ago', u'.']
+0-17 1-23 2-17 3-14 4-18 5-9 6-7 7-6 8-6 9-7 10-8 11-9 12-16 13-17 14-8 15-14 16-17 17-17 18-11 19-17 20-17 21-14 22-1 23-24 24-19 25-20 26-21 27-3 28-25 29-17 30-17 31-17 32-17 33-16 34-26
+
+
+[u'Ja', u',', u'Herr', u'Evans', u',', u'ich', u'denke', u',', u'da\xdf', u'eine', u'derartige', u'Initiative', u'durchaus', u'angebracht', u'ist', u'.']
+[u'Yes', u',', u'Mr', u'Evans', u',', u'I', u'feel', u'an', u'initiative', u'of', u'the', u'type', u'you', u'have', u'just', u'suggested', u'would', u'be', u'entirely', u'appropriate', u'.']
+0-13 1-4 2-2 3-3 4-4 5-5 6-14 7-4 8-6 9-7 10-11 11-8 12-18 13-19 14-8 15-20
+
+
+[u'Wenn', u'das', u'Haus', u'damit', u'einverstanden', u'ist', u',', u'werde', u'ich', u'dem', u'Vorschlag', u'von', u'Herrn', u'Evans', u'folgen', u'.']
+[u'If', u'the', u'House', u'agrees', u',', u'I', u'shall', u'do', u'as', u'Mr', u'Evans', u'has', u'suggested', u'.']
+0-0 1-0 2-3 3-3 4-3 5-2 6-4 7-6 8-5 9-2 10-3 11-2 12-9 13-10 14-3 15-13
+
+
+[u'Frau', u'Pr\xe4sidentin', u',', u'zur', u'Gesch\xe4ftsordnung', u'.']
+[u'Madam', u'President', u',', u'on', u'a', u'point', u'of', u'order', u'.']
+0-0 1-1 2-2 3-5 4-7 5-8
+
+
+[u'K\xf6nnten', u'Sie', u'mir', u'eine', u'Auskunft', u'zu', u'Artikel', u'143', u'im', u'Zusammenhang', u'mit', u'der', u'Unzul\xe4ssigkeit', u'geben', u'?']
+[u'I', u'would', u'like', u'your', u'advice', u'about', u'Rule', u'143', u'concerning', u'inadmissibility', u'.']
+0-4 1-3 2-3 3-8 4-9 5-5 6-6 7-8 8-9 9-2 10-9 11-6 12-7 13-9 14-4
+
+
+[u'Meine', u'Frage', u'betrifft', u'eine', u'Angelegenheit', u',', u'die', u'am', u'Donnerstag', u'zur', u'Sprache', u'kommen', u'wird', u'und', u'auf', u'die', u'ich', u'dann', u'erneut', u'verweisen', u'werde', u'.']
+[u'My', u'question', u'relates', u'to', u'something', u'that', u'will', u'come', u'up', u'on', u'Thursday', u'and', u'which', u'I', u'will', u'then', u'raise', u'again', u'.']
+0-0 1-16 2-4 3-7 4-2 5-3 6-12 7-17 8-10 9-8 10-2 11-2 12-14 13-11 14-3 15-12 16-13 17-15 18-2 19-2 20-2 21-18
+
+
+[u'Das', u'Parlament', u'wird', u'sich', u'am', u'Donnerstag', u'mit', u'dem', u'Cunha-Bericht', u'\xfcber', u'mehrj\xe4hrige', u'Ausrichtungsprogramme', u'befassen', u',', u'der', u'in', u'Absatz', u'6', u'vorschl\xe4gt', u',', u'da\xdf', u'L\xe4nder', u',', u'die', u'ihr', u'Soll', u'zur', u'Flottenverkleinerung', u'nicht', u'erf\xfcllen', u',', u'j\xe4hrlich', u'mit', u'einer', u'Art', u'Quotenstrafe', u'belegt', u'werden', u'sollen', u'.']
+[u'The', u'Cunha', u'report', u'on', u'multiannual', u'guidance', u'programmes', u'comes', u'before', u'Parliament', u'on', u'Thursday', u'and', u'contains', u'a', u'proposal', u'in', u'paragraph', u'6', u'that', u'a', u'form', u'of', u'quota', u'penalties', u'should', u'be', u'introduced', u'for', u'countries', u'which', u'fail', u'to', u'meet', u'their', u'fleet', u'reduction', u'targets', u'annually', u'.']
+0-38 1-9 2-38 3-7 4-11 5-11 6-33 7-38 8-38 9-10 10-38 11-38 12-28 13-26 14-22 15-16 16-17 17-38 18-38 19-26 20-19 21-29 22-26 23-30 24-10 25-38 26-7 27-38 28-7 29-38 30-26 31-38 32-33 33-17 34-38 35-38 36-38 37-21 38-25 39-39
+
+
+[u'Und', u'zwar', u'sollen', u'derartige', u'Strafen', u'trotz', u'des', u'Grundsatzes', u'der', u'relativen', u'Stabilit\xe4t', u'verh\xe4ngt', u'werden', u'.']
+[u'It', u'says', u'that', u'this', u'should', u'be', u'done', u'despite', u'the', u'principle', u'of', u'relative', u'stability', u'.']
+0-11 1-1 2-7 3-1 4-7 5-1 6-7 7-7 8-9 9-11 10-12 11-12 12-1 13-13
+
+
+[u'Ich', u'meine', u',', u'da\xdf', u'der', u'Grundsatz', u'der', u'relativen', u'Stabilit\xe4t', u'einen', u'elementaren', u'Rechtsgrundsatz', u'der', u'gemeinsamen', u'Fischereipolitik', u'darstellt', u'und', u'ein', u'Vorschlag', u',', u'diesen', u'zu', u'unterlaufen', u',', u'rechtlich', u'unzul\xe4ssig', u'w\xe4re', u'.']
+[u'I', u'believe', u'that', u'the', u'principle', u'of', u'relative', u'stability', u'is', u'a', u'fundamental', u'legal', u'principle', u'of', u'the', u'common', u'fisheries', u'policy', u'and', u'a', u'proposal', u'to', u'subvert', u'it', u'would', u'be', u'legally', u'inadmissible', u'.']
+0-0 1-27 2-25 3-2 4-13 5-10 6-12 7-6 8-7 9-15 10-16 11-10 12-5 13-26 14-10 15-22 16-18 17-15 18-20 19-9 20-27 21-23 22-27 23-25 24-27 25-27 26-22 27-28
+
+
+[u'Genau', u'dann', u'k\xf6nnen', u'Sie', u',', u'wenn', u'Sie', u'wollen', u',', u'diese', u'Frage', u'ansprechen', u',', u'd.', u'h.', u'am', u'Donnerstag', u'zu', u'Beginn', u'der', u'Aussprache', u'\xfcber', u'den', u'Bericht', u'.']
+[u'That', u'is', u'precisely', u'the', u'time', u'when', u'you', u'may', u',', u'if', u'you', u'wish', u',', u'raise', u'this', u'question', u',', u'i.e.', u'on', u'Thursday', u'prior', u'to', u'the', u'start', u'of', u'the', u'presentation', u'of', u'the', u'report', u'.']
+0-0 1-13 2-7 3-10 4-14 5-9 6-6 7-2 8-16 9-26 10-13 11-23 12-8 13-20 14-17 15-19 16-19 17-5 18-26 19-27 20-20 21-18 22-28 23-29 24-30
+
+
+[u'Auf', u'Wunsch', u'eines', u'franz\xf6sischen', u'Mitglieds', u',', u'Herrn', u'Zimeray', u',', u'wurde', u'bereits', u'eine', u'Petition', u'eingereicht', u',', u'die', u'von', u'vielen', u',', u'auch', u'von', u'mir', u'selbst', u',', u'unterzeichnet', u'worden', u'ist', u'.']
+[u'At', u'the', u'request', u'of', u'a', u'French', u'Member', u',', u'Mr', u'Zimeray', u',', u'a', u'petition', u'has', u'already', u'been', u'presented', u',', u'which', u'many', u'people', u'signed', u',', u'including', u'myself', u'.']
+0-24 1-2 2-11 3-24 4-24 5-22 6-8 7-24 8-22 9-15 10-14 11-3 12-24 13-24 14-22 15-1 16-16 17-19 18-22 19-24 20-16 21-24 22-24 23-22 24-24 25-15 26-16 27-25
+
+
+[u'All', u'dies', u'entspricht', u'den', u'Grunds\xe4tzen', u',', u'die', u'wir', u'stets', u'verteidigt', u'haben', u'.']
+[u'This', u'is', u'all', u'in', u'accordance', u'with', u'the', u'principles', u'that', u'we', u'have', u'always', u'upheld', u'.']
+0-12 1-4 2-2 3-4 4-4 5-10 6-6 7-9 8-7 9-12 10-7 11-13
+
+
