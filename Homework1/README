@@ -1,0 +1,83 @@
+NATURAL LANGUAGE PROCESSING
+Surashree Kulkarni (ssk2197)
+
+PART A
+
+1) 
+
+UNIGRAM natural -13.766408817
+BIGRAM natural that -4.05889368905
+TRIGRAM natural that he -1.58496250072
+
+2)
+
+python perplexity.py output/A2.uni.txt data/Brown_train.txt
+The perplexity is 1027.72002851
+
+python perplexity.py output/A2.bi.txt data/Brown_train.txt
+The perplexity is 53.68831425
+
+python perplexity.py output/A2.tri.txt data/Brown_train.txt
+The perplexity is 5.7106793082
+
+3)
+
+python perplexity.py output/A3.txt data/Brown_train.txt
+The perplexity is 12.5516094886
+
+4)
+
+According to Wikipedia, "perplexity" is a measure of how well a probability distribution predicts a model. A language model m is better than another model m' if it assigns lower perplexity to a corpus. The lower the perplexity, the higher the probability that the predictions of the model reflect the real text. 
+
+From the observations, it's clear that the perplexity of a unigram or bigram tagger is not very good. However, one would expect a linear interpolation model to do better than the trigram model. This is probably because the lambdas we use in our interpolation model all have equal weights, and hence do not score sentences properly. 
+
+5)
+
+python perplexity.py output/Sample1_scored.txt data/Brown_train.txt
+The perplexity is 1.54761961801
+
+python perplexity.py output/Sample2_scored.txt data/Brown_train.txt
+The perplexity is 7.47187322277
+
+ARGUMENT:
+Sample1 belongs to the Brown dataset because its perplexity is lower than Sample2's, indicating it is closer to the actual corpus. 
+
+PART B
+
+1) ---
+
+2)
+
+TRIGRAM CONJ ADV ADP -2.9755173148
+TRIGRAM DET NOUN NUM -8.9700526163
+TRIGRAM NOUN PRT PRON -11.0854724592
+
+3) 
+
+---
+
+4)
+
+* * 0.0
+Night NOUN -13.8819025994
+Place VERB -15.4538814891
+prime ADJ -10.6948327183
+STOP STOP 0.0
+_RARE_ VERB -3.17732085089
+
+5)
+
+Percent correct tags: 85.4124728829
+
+6)
+
+Percent correct tags: 23.5034299451
+
+NLTK's trigram tagger is not working for me, and is backing off to the default tagger. I believe what I've done implementation-wise is correct, so please see my code once for the nltk_tagger() function. 
+
+-----------------------------------------------------------------
+Run times:
+Part A time: 14.3 sec
+Part B time: 122.61 sec
+----------------------------------------------------------------
+
